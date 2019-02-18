@@ -53,12 +53,12 @@ menu {
 }
 
 .menu li a {
-    line-height: 54px;
+    line-height: 42px;
     display: block;
     color: white;
-    padding: 0px 20px;
+    padding: 0px 16px;
     text-decoration-line: none;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .menu li a.active,
