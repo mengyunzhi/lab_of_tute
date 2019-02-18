@@ -1,0 +1,45 @@
+description = "tute layout"
+==
+<!doctype html>
+<html lang="zh-hans">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="{{ this.page.meta_description }}">
+    <meta name="title" content="{{ this.page.meta_title }}">
+    <meta name="author" content="yunzhiclub">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="OctoberCMS">
+    <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}">
+    <link href="{{ 'assets/css/vendor.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet">
+    <link href="{{ 'assets/css/style.css'|theme }}" rel="stylesheet">
+    {% styles %}
+</head>
+
+<body ng-app="webAppApp">
+    <!--[if lte IE 8]>
+<p class="browsehappy">您使用的浏览器版本 <strong>过低</strong> .请访问 <a href="http://browsehappy.com/">Browshappy</a> 升级您的浏览器.</p>
+<![endif]-->
+    <header id="header">
+        {% partial 'site/header' %}
+    </header>
+
+    <!-- Content -->
+    <section id="main">
+        {% page %}
+    </section>
+
+    <footer class="footer">
+      {% partial 'site/footer' %}
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
+    <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
+    <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
+    {% framework extras %}
+    {% scripts %}
+</body>
+
+</html>

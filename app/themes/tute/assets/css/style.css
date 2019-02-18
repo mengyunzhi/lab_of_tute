@@ -1,0 +1,173 @@
+/*https://color.adobe.com/zh/Copy-of-Flat-Design-color-theme-10773248/edit/?copy=true&base=1&rule=Custom&selected=3&name=%E5%89%AF%E6%9C%AC%E4%BE%86%E6%BA%90%20Copy%20of%20Flat%20Design&mode=hsv&rgbvalues=0.89,0.4841600000000777,0.24920000000000003,0.27299999999999996,0.7,0.6146000000000776,0.87,0.35510499999980555,0.28709999999999997,0.198,0.3005999999999803,0.36,0.94,0.7908533333331782,0.30079999999999996&swatchOrder=0,1,2,3,4*/
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.right {
+    float: right;
+}
+
+#banner {
+    height: 10px;
+    background-color: #E37B40;
+}
+
+#logo {
+    background-color: #46B29D;
+}
+
+#logo img {
+    height: 100px;
+    float: left;
+    padding: 5px 0px;
+    margin-right: 20px;
+}
+
+#logo h3 {
+    margin-top: 40px;
+    text-align: left;
+    color: white;
+}
+
+menu {
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu {
+    background-color: #324D5C;
+}
+
+.menu ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu li {
+    float: left;
+    list-style: none;
+    padding: 0px;
+}
+
+.menu li a {
+    line-height: 54px;
+    display: block;
+    color: white;
+    padding: 0px 20px;
+    text-decoration-line: none;
+    font-size: 18px;
+}
+
+.menu li a.active,
+.menu li a:hover {
+    background-color: #F0CA4D;
+    color: #324D5C;
+    font-weight: bold;
+}
+
+.clear {
+    clear: both;
+    height: 0px;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    padding: 0;
+}
+
+
+content {
+    display: block;
+    padding: 20px 0px;
+    font-size: 20px;
+    line-height: 34px;
+}
+
+content p {
+    text-indent: 28px;
+}
+
+content h1,
+h2,
+h3,
+h4,
+h5 {
+    text-align: center;
+    color: #E37B40;
+}
+
+content img {
+    text-align: center;
+    max-width: 100%;
+    padding: 10px;
+}
+
+content ol li {
+    padding: 5px 0px 5px 5px;
+    border-bottom: 1px dotted #324D5C;
+}
+
+.item img {
+    padding: 0px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 10px;
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #E37B40;
+    text-align: center;
+}
+
+.leftMenu ul li {
+    list-style: none;
+    margin: 0px 0px;
+}
+
+.leftMenu ul li a {
+    padding: 0px 0px 0px 10px;
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-right: 5px solid #46B29D;
+    border-left: 5px solid #46B29D;
+    border-bottom: 1px dotted #46B29D;
+    border-top: 1px dotted #46B29D;
+    margin: 4px 0px;
+}
+
+.leftMenu ul li a.active,
+.leftMenu ul li a:hover {
+    color: white;
+    font-weight: bold;
+    background-color: #46B29D;
+    border-right: 6px solid #E37B40;
+    border-left: 6px solid #E37B40;
+}
