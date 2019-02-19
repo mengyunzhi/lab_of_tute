@@ -5,7 +5,7 @@
 */
 
 return [
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
     'url' => env('APP_URL', 'http://localhost'),
     'timezone' => env('TZ', 'UTC'),
     'key' => env('APP_KEY', '0123456789ABCDEFGHIJKLMNOPQRSTUV'),

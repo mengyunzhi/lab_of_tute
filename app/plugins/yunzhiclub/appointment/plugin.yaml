@@ -1,0 +1,11 @@
+plugin:
+    name: 'yunzhiclub.appointment::lang.plugin.name'
+    description: 'yunzhiclub.appointment::lang.plugin.description'
+    author: yunzhiclub
+    icon: oc-icon-calendar
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 实验预约
+        url: yunzhiclub/appointment/appointment
+        icon: icon-life-ring

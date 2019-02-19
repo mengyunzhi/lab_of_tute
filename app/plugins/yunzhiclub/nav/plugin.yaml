@@ -1,0 +1,6 @@
+plugin:
+    name: header
+    description: 'yunzhiclub.header::lang.plugin.description'
+    author: yunzhiclub
+    icon: oc-icon-adjust
+    homepage: ''

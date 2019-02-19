@@ -1,0 +1,13 @@
+columns:
+    name:
+        label: 申请人
+        type: text
+    datetime:
+        label: 预约时间
+        type: datetime
+    email:
+        label: 邮箱
+        type: text
+    confirmed:
+        label: 是否已确认
+        type: text

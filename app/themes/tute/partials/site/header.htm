@@ -1,3 +1,7 @@
+[viewBag]
+
+[navIndex]
+==
 <div id="banner">
 </div>
 <div id="logo">
@@ -6,23 +10,4 @@
         <h3>天津职业技术师范大学经管学院实验实训中心欢迎您！</h3>
     </div>
 </div>
-<div class="menu">
-    <div class="container">
-        <ul>
-            <li><a href="/" class="{% if this.page.id == 'index' %}active{% endif %}">首页</a></li>
-            <li><a href="/soft" class="{% if this.page.id == 'soft' %}active{% endif %}">实验软件</a></li>
-            <li><a href="/teacher/">随堂资源</a>
-            <li><a href="/about_us" class="{% if this.page.id == 'about_us' %}active{% endif %}">中心概况</a></li>
-            <li><a href="/news" class="{% if this.page.id == 'news' %}active{% endif %}">新闻动态</a></li>
-            <li><a href="/" class="{% if this.page.id == 'teaching' %}active{% endif %}">实验教学</a></li>
-            <li><a href="/" class="{% if this.page.id == 'rules' %}active{% endif %}">规章制度</a></li>
-            <li><a href="/" class="{% if this.page.id == 'equipment_and_environment' %}active{% endif %}">设备与环境</a></li>
-            <li><a href="/" class="{% if this.page.id == 'achievements' %}active{% endif %}">中心成果</a></li>
-            <li><a href="/" class="{% if this.page.id == 'appointment' %}active{% endif %}">实验预约</a></li>
-            <li><a href="/" class="{% if this.page.id == 'resources' %}active{% endif %}">教学资源</a></li>
-            <li><a href="/" class="{% if this.page.id == 'acceptance' %}active{% endif %}">验收专栏</a></li>
-            <li><a href="/">学院首页</a></li>
-            <div class="clear"></div>
-        </ul>
-    </div>
-</div>
+{% component 'navIndex' %}

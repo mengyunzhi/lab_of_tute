@@ -1,0 +1,10 @@
+name: Appointment
+form: $/yunzhiclub/appointment/models/appointment/fields.yaml
+modelClass: Yunzhiclub\Appointment\Models\Appointment
+defaultRedirect: yunzhiclub/appointment/appointment
+create:
+    redirect: 'yunzhiclub/appointment/appointment/update/:id'
+    redirectClose: yunzhiclub/appointment/appointment
+update:
+    redirect: yunzhiclub/appointment/appointment
+    redirectClose: yunzhiclub/appointment/appointment
