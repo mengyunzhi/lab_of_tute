@@ -3,16 +3,23 @@
 use Cms\Classes\ComponentBase;
 use Yunzhiclub\Appointment\Models\Appointment;
 
-class Index extends ComponentBase {
-	public function componentDetails() {
-		return [
-			'name' => '列表页',
-			'description' => '显示预约信息'
-		];
-	}
+class Index extends ComponentBase
+{
+    public function componentDetails()
+    {
+        return [
+            'name' => '列表页',
+            'description' => '显示预约信息'
+        ];
+    }
 
-	public function onRun() {
+    public function onRun()
+    {
+        $this->lists = Appointment::where([])
+            ->orderBy('id', 'desc')
+            ->get();
+    }
 
-	}
+    public $lists = [];
 
 }

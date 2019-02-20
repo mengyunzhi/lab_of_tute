@@ -1,18 +1,29 @@
+{% set lists = __SELF__.lists %}
 <div class="container">
-	<a class="btn btn-primary" href="/appointment/add">我要预约</a>
-	<table class="table">
-		<tr>
-			<th>序号</th>
-			<th>预约人</th>
-			<th>时间</th>
-			<th>实验室</th>
-			<th>原因</th>
-			<th>受理结果</th>
-			<th>受理时间</th>
-			<th>受理人</th>
-		</tr>
-		<tr>
-			
-		</tr>
-	</table>
+    <a class="btn btn-primary" href="/appointment/add">我要预约</a>
+    <table class="table">
+        <tr>
+            <th>序号</th>
+            <th>预约人</th>
+            <th>时间</th>
+            <th>实验室</th>
+            <th>原因</th>
+            <th>受理结果</th>
+            <th>受理时间</th>
+            <th>受理人</th>
+        </tr>
+
+        {% for list in lists %}
+        <tr>
+            <td>{{ list.id }}</td>
+            <td>{{ list.name }}</td>
+            <td>{{ list.datetime }}</td>
+            <td>{{ list.room }}</td>
+            <td>{{ list.reason }}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {% endfor %}
+    </table>
 </div>
