@@ -2,12 +2,23 @@ columns:
     name:
         label: 申请人
         type: text
+        searchable: true
     datetime:
         label: 预约时间
         type: datetime
     email:
         label: 邮箱
         type: text
-    confirmed:
-        label: 是否已确认
+    reason:
+        label: 申请原因
+        type: text
+    created_at:
+        label: 创建时间
+        type: datetime
+        sortable: true
+    feedback:
+        label: 受理信息
+        type: text
+    phone:
+        label: 手机
         type: text

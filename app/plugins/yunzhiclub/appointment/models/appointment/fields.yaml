@@ -2,6 +2,7 @@ fields:
     name:
         label: 姓名
         span: left
+        disabled: 0
         required: 1
         type: text
     email:
@@ -24,4 +25,12 @@ fields:
         label: 说明
         size: ''
         span: full
+        type: textarea
+    feedback:
+        label: 受理信息
+        size: ''
+        span: full
+        context:
+            - update
+            - preview
         type: textarea

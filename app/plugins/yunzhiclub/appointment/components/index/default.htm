@@ -1,29 +1,44 @@
 {% set lists = __SELF__.lists %}
+{% set page = __SELF__.page %}
+{% set isLastPage = __SELF__.isLastPage %}
+{% set isFirstPage = __SELF__.isFirstPage %}
 <div class="container">
-    <a class="btn btn-primary" href="/appointment/add">我要预约</a>
-    <table class="table">
-        <tr>
-            <th>序号</th>
-            <th>预约人</th>
-            <th>时间</th>
-            <th>实验室</th>
-            <th>原因</th>
-            <th>受理结果</th>
-            <th>受理时间</th>
-            <th>受理人</th>
-        </tr>
+    <div class="row">
+        <div class="col-md-2 col-md-push-10">
+            <br>
+            <a class="btn btn-primary" href="/appointment/add">我要预约</a>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <tr>
+                    <th>序号</th>
+                    <th>预约人</th>
+                    <th>时间</th>
+                    <th>实验室</th>
+                    <th>预约事项</th>
+                    <th>受理结果</th>
+                </tr>
 
-        {% for list in lists %}
-        <tr>
-            <td>{{ list.id }}</td>
-            <td>{{ list.name }}</td>
-            <td>{{ list.datetime }}</td>
-            <td>{{ list.room }}</td>
-            <td>{{ list.reason }}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        {% endfor %}
-    </table>
+                {% for list in lists %}
+                <tr>
+                    <td>{{ list.id }}</td>
+                    <td>{{ list.name }}</td>
+                    <td>{{ list.datetime }}</td>
+                    <td>{{ list.room }}</td>
+                    <td>{{ list.reason }}</td>
+                    <td>{{ list.feedback }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="col-md-2 col-md-push-10 text-right">
+            <a href="{{ ''|page({ page: page - 1 }) }}" {% if isFirstPage %} style="visibility: hidden" {% endif %}>< 上一页</a>
+            <span>&nbsp;{{ page }}&nbsp;</span>
+            <a href="{{ ''|page({ page: page + 1 }) }}" {% if isLastPage %} style="visibility: hidden" {% endif %}>下一页 ></a>
+
+        </div>
+    </div>
 </div>
