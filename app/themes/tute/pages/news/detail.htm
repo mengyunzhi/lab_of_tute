@@ -1,0 +1,19 @@
+title = "新闻通知详情"
+url = "/news/:slug"
+layout = "tute"
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "news"
+==
+{% set post = blogPost.post %}
+<content class="container news-detail">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>{{ post.title }}</h3>
+            <div class="info text-center">发布日期：{{ post.published_at|date('Y-m-d') }} &nbsp; 作者：{{ post.user.first_name }}</div>
+            <content>{{ post.content_html|raw }}</content>
+        </div>
+    </div>
+</content>

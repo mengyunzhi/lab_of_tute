@@ -19,7 +19,10 @@ class Plugin extends PluginBase
      /** 注册MARKUP tags */
     public function registerMarkupTags()
     {
-      	return [];
+      	return [
+            'functions' => [
+            ]
+        ];
     }
 
 }

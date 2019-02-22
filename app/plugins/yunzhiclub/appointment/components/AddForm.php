@@ -2,6 +2,7 @@
 
 use Cms\Classes\ComponentBase;
 use Illuminate\Support\Facades\Input;
+use October\Rain\Exception\ValidationException;
 use Yunzhiclub\Appointment\Models\Appointment;
 
 class AddForm extends ComponentBase {
@@ -24,6 +25,9 @@ class AddForm extends ComponentBase {
 	}
 
 	public function onSave() {
+	    if (empty(Input::get("datetime"))) {
+            throw new ValidationException(['datetime' => '您必须选择预约时间!']);
+        }
         $appiontment = new Appointment;
         $appiontment->name = Input::get("name");
         $appiontment->email = Input::get("email");

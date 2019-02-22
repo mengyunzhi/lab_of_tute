@@ -1,12 +1,15 @@
-list: $/yunzhiclub/appointment/models/appointment/columns.yaml
-modelClass: Yunzhiclub\Appointment\Models\Appointment
 title: Appointment
+modelClass: Yunzhiclub\Appointment\Models\Appointment
+list: $/yunzhiclub/appointment/models/appointment/columns.yaml
+recordUrl: 'yunzhiclub/appointment/appointment/update/:id'
 noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
 showSetup: true
 showCheckboxes: true
-recordsPerPage: 20
+defaultSort:
+    column: id
+    direction: asc
 toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
-recordUrl: 'yunzhiclub/appointment/appointment/update/:id'

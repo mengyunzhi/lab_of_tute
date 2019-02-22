@@ -6,33 +6,38 @@
                 预约申请将在2个工作日内审核，请您提前预约。
             </div>
             <form data-request="{{ __SELF__ }}::onSave" data-request-redirect="/appointment"
-                  data-request-success="alert('预约成功')">
+                  data-request-success="alert('预约成功')"
+                  data-request-validate>
                 <div class="form-group">
-                    <label for="name">姓名</label>
-                    <input type="text" name="name" class="form-control" id="name" placeholder="姓名">
+                    <label for="name">姓名<code>*</code></label>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="姓名" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">电子邮箱</label>
+                    <label for="email">电子邮箱<code>*</code></label>
                     <input type="email" name="email" class="form-control" id="email"
-                           placeholder="预约受理信息将发送至您填写的邮箱（可能被识别为垃圾邮件）">
+                           placeholder="预约受理信息将发送至您填写的邮箱（可能被识别为垃圾邮件）" required>
                 </div>
                 <div class="form-group">
-                    <label for="phone">手机号码</label>
-                    <input type="tel" name="phone" class="form-control" id="phone" placeholder="手机号码">
+                    <label for="phone">手机号码<code>*</code></label>
+                    <input type="tel" name="phone" class="form-control" id="phone" placeholder="手机号码" required>
                 </div>
                 <div class="form-group">
-                    <label>预约时间</label>
+                    <label>预约时间<code>*</code></label>
                     <div class="input-group date form_datetime"
-                         data-date-format="yyyy MM dd - p HH:ii" data-link-field="datetime">
+                         data-date-format="yyyy MM dd - p HH:ii"
+                         data-link-field="datetime"
+                         data-date-start-date="2019 03 01"
+                         data-date-startDate="2019 03 01">
                         <input class="form-control" size="16" type="text" value="" readonly>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
                     </div>
                     <input type="hidden" id="datetime" name="datetime" value=""/><br/>
+                    <div data-validate-for="datetime"></div>
                 </div>
 
                 <div class="form-group">
-                    <label>预约教室</label>
+                    <label>预约教室<code>*</code></label>
                     <select class="form-control" name="room">
                         <option>701 证券投资实验室</option>
                         <option>702 信用管理实验室</option>

@@ -1,4 +1,8 @@
 /*https://color.adobe.com/zh/Copy-of-Flat-Design-color-theme-10773248/edit/?copy=true&base=1&rule=Custom&selected=3&name=%E5%89%AF%E6%9C%AC%E4%BE%86%E6%BA%90%20Copy%20of%20Flat%20Design&mode=hsv&rgbvalues=0.89,0.4841600000000777,0.24920000000000003,0.27299999999999996,0.7,0.6146000000000776,0.87,0.35510499999980555,0.28709999999999997,0.198,0.3005999999999803,0.36,0.94,0.7908533333331782,0.30079999999999996&swatchOrder=0,1,2,3,4*/
+li {
+    list-style: none;
+}
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -84,8 +88,8 @@ body {
 content {
     display: block;
     padding: 20px 0px;
-    font-size: 20px;
-    line-height: 34px;
+    font-size: 16px;
+    line-height: 32px;
 }
 
 content p {
@@ -169,4 +173,33 @@ content ol li {
     background-color: #46B29D;
     border-right: 6px solid #E37B40;
     border-left: 6px solid #E37B40;
+}
+
+content.soft p {
+    text-indent: 0px;
+}
+
+.soft ul li {
+    margin-top:20px;
+    border-bottom: 1px solid #3eb39c;
+    border-radius: 5px;
+}
+
+.soft ul li img {
+    border-radius: 15px;
+}
+
+.news ul li {
+    border-bottom: 1px dotted #3eb39c;
+    margin-top: 16px;
+    padding-bottom: 5px;
+}
+
+.news ul li .date {
+    float: right;
+    color: #333333;
+}
+
+.news ul li .list-icon {
+    color: #f0cc33;
 }

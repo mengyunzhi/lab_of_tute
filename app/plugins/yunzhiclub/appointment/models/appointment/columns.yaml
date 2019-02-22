@@ -1,4 +1,7 @@
 columns:
+    id:
+        label: id
+        type: text
     name:
         label: 申请人
         type: text
@@ -8,6 +11,9 @@ columns:
         type: datetime
     email:
         label: 邮箱
+        type: text
+    phone:
+        label: 手机
         type: text
     reason:
         label: 申请原因
@@ -19,6 +25,4 @@ columns:
     feedback:
         label: 受理信息
         type: text
-    phone:
-        label: 手机
-        type: text
+

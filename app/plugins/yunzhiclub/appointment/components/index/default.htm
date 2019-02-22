@@ -14,9 +14,9 @@
         <div class="col-md-12">
             <table class="table">
                 <tr>
-                    <th>序号</th>
+                    <th>预约时间</th>
                     <th>预约人</th>
-                    <th>时间</th>
+                    <th>使用时间</th>
                     <th>实验室</th>
                     <th>预约事项</th>
                     <th>受理结果</th>
@@ -24,9 +24,9 @@
 
                 {% for list in lists %}
                 <tr>
-                    <td>{{ list.id }}</td>
+                    <td>{{ list.created_at|date('Y-m-d') }}</td>
                     <td>{{ list.name }}</td>
-                    <td>{{ list.datetime }}</td>
+                    <td>{{ list.datetime|date('Y-m-d H:i') }}</td>
                     <td>{{ list.room }}</td>
                     <td>{{ list.reason }}</td>
                     <td>{{ list.feedback }}</td>

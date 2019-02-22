@@ -1,18 +1,36 @@
 title = "news"
 url = "/news"
 layout = "tute"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "news"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "about_us"
+postPage = "news/detail"
 ==
+{% set posts = blogPosts.posts %}
 <content class="container news">
     <div class="row">
         <div class="col-md-12">
             <ul>
+                {% for post in posts %}
                 <li>
-                    标题 <span>年月日</span>
+                    <div class="title">
+                        <small class="list-icon">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </small>
+                        <a href="{{ post.url }}">{{ post.title }}</a>
+                        <span class="date">{{ post.published_at|date('Y-m-d') }}</span>
+                    </div>
                 </li>
-                <li>
-                    标题 <span>年月日</span>
-                </li>
+                {% endfor %}
             </ul>
+
+
         </div>
     </div>
 </content>
