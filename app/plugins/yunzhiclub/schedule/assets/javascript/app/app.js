@@ -1,16 +1,10 @@
 'use strict';
-alert('hi');
 var app = angular.module('app', ['ui.router']);
 app.config(function($stateProvider) {
     $stateProvider
-        .state('course', {
-            url: '/course',
-            abstract: true,
-            template: '<ui-view></ui-view>'
-        })
-        .state('course.add', {
-            url: '/add',
-            templateUrl: 'course/add.html'
+        .state('main', {
+            url: '',
+            templateUrl: '/themes/yunzhiclub/assets/main.html'
         })
 
         .state('student', {

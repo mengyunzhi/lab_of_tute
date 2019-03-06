@@ -4,10 +4,10 @@ const gulpif = require('gulp-if');
 const uglify = require('gulp-uglify');
 const del = require('del');
 const concat = require('gulp-concat');
-
-function isJavaScript(file) {
-    return file.extname === '.js';
-}
+const jsFiles = ['app/*.js', 'app/**/*.js'];
+const  htmlFiles = ['app/view/*.html', 'app/view/**/*.html'];
+const watcherJs = watch(jsFiles);
+const watcherHtml = watch(htmlFiles);
 
 function clean(cb) {
     console.log('删除临时文件');
@@ -19,8 +19,7 @@ function clean(cb) {
 
 function build(cb) {
     console.log('正在构建');
-    src(['app/*.js',
-        'app/**/*.js'])
+    src(jsFiles)
         .pipe(babel())
         // .pipe(gulpif(isJavaScript, uglify()))
         .pipe(concat('index.min.js'))
@@ -28,15 +27,29 @@ function build(cb) {
     cb();
 }
 
-const watcher = watch(['app/*.js', 'app/**/*.js']);
-watcher.on('change', function () {
+function buildHtml(cb) {
+    console.log('正在构建HTML');
+    src(htmlFiles)
+        .pipe(dest('./../../../../../themes/yunzhiclub/assets'));
+    cb();
+}
+
+watcherJs.on('change', function () {
     console.log('监测到文件变化');
-    build(function() {
+    build(function () {
         console.log('构建完毕!');
+    });
+});
+
+
+watcherHtml.on('change', function () {
+    console.log('监测到视图文件发生变化');
+    buildHtml(function() {
+        console.log('视图构建完毕');
     });
 });
 
 exports.build = build;
 
 // 顺序执行series(), 并发执行parallel().两者可嵌套使用
-exports.default = series(clean, build);
+exports.default = series(clean, build, buildHtml);
