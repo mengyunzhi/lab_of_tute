@@ -1,0 +1,6 @@
+plugin:
+    name: 'yunzhiclub.schedule::lang.plugin.name'
+    description: 'yunzhiclub.schedule::lang.plugin.description'
+    author: yunzhiclub
+    icon: oc-icon-adjust
+    homepage: ''

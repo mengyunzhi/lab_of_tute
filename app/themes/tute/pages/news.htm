@@ -9,7 +9,7 @@ categoryFilter = "news"
 postsPerPage = 10
 noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
-categoryPage = "about_us"
+categoryPage = "news"
 postPage = "news/detail"
 ==
 {% set posts = blogPosts.posts %}
@@ -29,7 +29,27 @@ postPage = "news/detail"
                 </li>
                 {% endfor %}
             </ul>
+            {% if posts.lastPage > 1 %}
+            <div class="text-center">
+                <ul class="pagination">
+                    {% if posts.currentPage > 1 %}
+                    <li><a href="{{ this.page.baseFileName|page({ (blogPosts.pageParam): (posts.currentPage-1) }) }}">&larr;
+                        上一页</a></li>
+                    {% endif %}
 
+                    {% for page in 1..posts.lastPage %}
+                    <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                        <a href="{{ this.page.baseFileName|page({ (blogPosts.pageParam): page }) }}">{{ page }}</a>
+                    </li>
+                    {% endfor %}
+
+                    {% if posts.lastPage > posts.currentPage %}
+                    <li><a href="{{ this.page.baseFileName|page({ (blogPosts.pageParam): (posts.currentPage+1) }) }}">下一页
+                        &rarr;</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            {% endif %}
 
         </div>
     </div>

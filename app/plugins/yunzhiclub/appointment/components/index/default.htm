@@ -2,6 +2,7 @@
 {% set page = __SELF__.page %}
 {% set isLastPage = __SELF__.isLastPage %}
 {% set isFirstPage = __SELF__.isFirstPage %}
+{% set showPage = __SELF__.showPage %}
 <div class="container">
     <div class="row">
         <div class="col-md-2 col-md-push-10">
@@ -34,11 +35,18 @@
                 {% endfor %}
             </table>
         </div>
-        <div class="col-md-2 col-md-push-10 text-right">
-            <a href="{{ ''|page({ page: page - 1 }) }}" {% if isFirstPage %} style="visibility: hidden" {% endif %}>< 上一页</a>
-            <span>&nbsp;{{ page }}&nbsp;</span>
-            <a href="{{ ''|page({ page: page + 1 }) }}" {% if isLastPage %} style="visibility: hidden" {% endif %}>下一页 ></a>
-
+        {% if showPage %}
+        <div class="col-md-12 text-center">
+            <ul class="pagination">
+                <li>
+                    <a href="{{ ''|page({ page: page - 1 }) }}" {% if isFirstPage %} style="visibility: hidden" {% endif %}>< 上一页</a>
+                </li>
+                <li class="active"><a href="{{ ''|page({ page: page }) }}">{{ page }}</a></li>
+                <li>
+                    <a href="{{ ''|page({ page: page + 1 }) }}" {% if isLastPage %} style="visibility: hidden" {% endif %}>下一页 ></a>
+                </li>
+            </ul>
         </div>
+        {% endif %}
     </div>
 </div>

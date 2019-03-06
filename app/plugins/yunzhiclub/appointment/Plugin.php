@@ -7,8 +7,8 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
     	return [
-    		'Yunzhiclub\Appointment\Components\AddForm' => 'add',
-    		'Yunzhiclub\Appointment\Components\Index' => 'index'
+    		'Yunzhiclub\Appointment\Components\AddForm' => 'appointmentAdd',
+    		'Yunzhiclub\Appointment\Components\Index' => 'appointmentIndex'
     	];
     }
 

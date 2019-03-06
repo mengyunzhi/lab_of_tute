@@ -11,6 +11,7 @@ class Index extends ComponentBase
     public $page = 1;
     public $isLastPage = false;
     public $isFirstPage = false;
+    public $showPage = true;    // 是否显示分页信息
 
     public function componentDetails()
     {
@@ -27,8 +28,13 @@ class Index extends ComponentBase
             ->orderBy('id', 'desc')
             ->simplePaginate($this->property('maxItems'), $this->page);
 
-        if ($this->lists->count() < $this->property('maxItems')) {
+        // 最后一页
+        if (!$this->lists->hasMorePages()) {
             $this->isLastPage = true;
+            //  最后一页，同时是第一页
+            if ((int)$this->page === 1) {
+                $this->showPage = false;
+            }
         }
 
         if ((int)$this->page === 1) {

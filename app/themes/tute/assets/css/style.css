@@ -143,7 +143,6 @@ content ol li {
 
 /* Custom page footer */
 .footer {
-    margin-top: 20px;
     color: #777;
     border-top: 1px solid #E37B40;
     text-align: center;
@@ -203,3 +202,19 @@ content.soft p {
 .news ul li .list-icon {
     color: #f0cc33;
 }
+
+.index-left {
+
+}
+
+.index-left h4 {
+    text-align: left;
+}
+
+.index-left .post-list {
+    padding: 0px;
+}
+.index-left ul li {
+    margin-top: 5px;
+}
+

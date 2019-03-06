@@ -1,52 +1,84 @@
 title = "index"
 url = "/"
 layout = "tute"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "news"
+postsPerPage = 12
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "news"
+postPage = "news/detail"
 ==
 <content class="container">
     <div class="row">
-        <div class="col-md-8">
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                </ol>
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img src="{{ '/assets/images/001.jpg'|theme }}" alt="...">
-                        <div class="carousel-caption">
+        <div class="col-md-3 index-left news">
+            <h4>最新新闻</h4>
+            {% set posts = blogPosts.posts %}
+
+            <ul class="post-list">
+                {% for post in posts %}
+                <li>
+                    <span class="right"> {{ post.published_at|date('Y-m-d') }}</span>
+                    <a href="{{ post.url }}">{{ str_limit(post.title, 18, ' ..') }}</a>
+                </li>
+                {% else %}
+                <li class="no-data">{{ blogPosts.noPostsMessage }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-9 index-right">
+            <div class="row">
+                <div class="col-md-8">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img src="{{ '/assets/images/001.jpg'|theme }}" alt="...">
+                                <div class="carousel-caption">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="{{ '/assets/images/003.jpg'|theme }}" alt="...">
+                                <div class="carousel-caption">
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="{{ '/assets/images/222.jpg'|theme }}" alt="...">
+                                <div class="carousel-caption">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <img src="{{ '/assets/images/003.jpg'|theme }}" alt="...">
-                        <div class="carousel-caption">
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="{{ '/assets/images/222.jpg'|theme }}" alt="...">
-                        <div class="carousel-caption">
-                        </div>
-                    </div>
-                </div>
-                <!-- Controls -->
-                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
-                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
           <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
+                    </div>
+                </div>
+                <content style="padding:0px 15px;">
+                    <p>
+                        天津职业技术师范大学经济与管理学院实验与实训中心成立于2005年，是经济与管理学院下设的二级单位，是为全院师生提供教学和科研服务的实践平台。
+                    </p>
+                    <p>
+                        实验与实训中心位于主教学楼8层，总建筑面积超过2000平方米，目前设有6个本科专业实验室、1个研究生专业实验室、1个微格教学室。是集经济与管理类专业理论课教学，实验实训教学，职教师资培训，项目研究与开发，社会服务，技能竞赛于一体的实验实训中心。
+                    </p>
+                    <p>实验实训中心目前承担1个硕士研究生专业（管理科学与工程）、7个本科专业（电子商务、物流管理、金融学、财务会计教育、劳动与社会保障、人力资源管理、信用管理）的实验、实训教学工作及相关科研任务，同时还承担各种培训、考试、课外实践、创新创业教育等活动。近年来，中心先后为校级大学生创业大赛，ERP企业经营模拟大赛，市场营销大赛等多项比赛提供比赛场地和技术支持等服务。</p>
+                </content>
+
             </div>
         </div>
-        <p>
-            天津职业技术师范大学经济与管理学院实验与实训中心成立于2005年，是经济与管理学院下设的二级单位，是为全院师生提供教学和科研服务的实践平台。
-        </p>
-        <p>
-            实验与实训中心位于主教学楼8层，总建筑面积超过2000平方米，目前设有6个本科专业实验室、1个研究生专业实验室、1个微格教学室。是集经济与管理类专业理论课教学，实验实训教学，职教师资培训，项目研究与开发，社会服务，技能竞赛于一体的实验实训中心。
-        </p>
-        <p>实验实训中心目前承担1个硕士研究生专业（管理科学与工程）、7个本科专业（电子商务、物流管理、金融学、财务会计教育、劳动与社会保障、人力资源管理、信用管理）的实验、实训教学工作及相关科研任务，同时还承担各种培训、考试、课外实践、创新创业教育等活动。近年来，中心先后为校级大学生创业大赛，ERP企业经营模拟大赛，市场营销大赛等多项比赛提供比赛场地和技术支持等服务。</p>
     </div>
 </content>
