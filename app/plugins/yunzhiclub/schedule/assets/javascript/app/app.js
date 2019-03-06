@@ -7,12 +7,12 @@ app.config(function($stateProvider) {
             templateUrl: '/themes/yunzhiclub/assets/main.html'
         })
 
-        .state('student', {
-            url: '/student',
-            templateUrl: 'student/index.html',
-            controller: 'StudentIndexCtrl',
+        .state('add', {
+            url: '/add',
+            templateUrl: '/themes/yunzhiclub/assets/add.html',
+            // controller: 'StudentIndexCtrl',
             data: {
-                title: '学生管理'
+                title: '添加授课计划'
             }
         })
 
