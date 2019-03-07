@@ -1,3 +1,5 @@
+# 前提
+在模板中，引入`anguarjs`以及`ui-router`。参考：`项目根路径/themes/tute/layouts/tute.htm`。
 # 安装依赖
 `npm install && npm install gulp-cli -g`  
 安装成功后，执行`gulp`
@@ -12,7 +14,7 @@
 设置路由时，应该将`templateUrl`设置为`/themes/yunzhiclub/assets/xxx.html`。
 如果本项目运行在**非**根目录的环境中，那么，需要在设置URL中，加入项目目录，比如：`xxx/themes/...`
 
-在进行`ajax`交互时，需要在`index.php`中定义相关方法，方法名必须以`on`为前缀。前台进行请求时，以请求方法`onSaveSubmit`为例为:
+在进行`ajax`交互时，需要在`index.php`中定相关方法，方法名必须以`on`为前缀。前台进行请求时，以请求方法`onSaveSubmit`为例为:
 ```js
  self.save = function(data) {
         var headers = {
