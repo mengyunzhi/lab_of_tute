@@ -14,17 +14,18 @@ app.controller('AddCtrl', ['scheduleService', '$scope', function (scheduleServic
     };
 
 
-    self.initData = function() {
+    self.initData = function () {
         $scope.state = self.states.unSubmit;
         $scope.data = {
             name: '',
             lab: '',
             course: '',
-            klasses: ''
+            klasses: '',
+            time: ''
         };
     };
 
-    self.showByState = function(state) {
+    self.showByState = function (state) {
         if (state === $scope.state) {
             return true;
         } else {
@@ -34,11 +35,11 @@ app.controller('AddCtrl', ['scheduleService', '$scope', function (scheduleServic
 
     self.submit = function () {
         $scope.state = self.states.submitting;
-        scheduleService.save()
+        scheduleService.save($scope.data)
             .then(function success() {
                 $scope.state = self.states.submitted;
             }, function error(response) {
-                console.log(response);
+                alert('发生错误:' + response.state);
                 $scope.state = self.states.submitted;
             });
     };

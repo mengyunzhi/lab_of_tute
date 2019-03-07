@@ -3,39 +3,67 @@
         <div class="col-md-12">
             <div class="alert alert-warning text-center" role="alert">
                 对不起，当前时间非授课计划提交时间。<br/>本学期提交时间为：2019年3月2日至2019年3月5日。
-                <br />
+                <br/>
                 <a ui-sref="main" class="btn btn-info">返回</a>
             </div>
         </div>
     </div>
     <div class="row" ng-if="isOpen">
         <div class="col-md-12">
+            <div class="alert alert-success" role="alert">
+                按照大家提交需求的先后顺序，在排课时尽量满足大家对上课时间和地点的要求，但是在实训周由于课时量大，实验室资源紧张没有办法完全满足大家的要求，所以将对部分老师的要求进行微调，还请大家能够理解。
+            </div>
+            <pre>{{data | json}}</pre>
             <form ng-submit="submit()">
                 <div class="form-group">
-                    <label for="name">姓名</label>
-                    <input type="text" class="form-control" id="name" placeholder="姓名">
+                    <label for="name">姓名<code>*</code></label>
+                    <input type="text" class="form-control" id="name" placeholder="姓名" ng-model="data.name">
                 </div>
                 <div class="form-group">
-                    <label for="lab">实验室</label>
-                    <input type="text" class="form-control" id="lab" placeholder="实验室">
+                    <label for="lab">实验室<code>*</code></label>
+                    <select class="form-control" name="lab" id="lab" ng-model="data.lab">
+                        <option>701 证券投资实验室</option>
+                        <option>702 信用管理实验室</option>
+                        <option>801 财会实验室</option>
+                        <option>802 物流管理实验室</option>
+                        <option>810 微格教学实验室</option>
+                        <option>811 手工记账实验室</option>
+                        <option>819 情景实验室</option>
+                        <option>820 研究生专用实验室</option>
+                        <option>821,823</option>
+                        <option>822,824 电子商务实验室</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="lab">课程</label>
-                    <input type="text" class="form-control" id="course" placeholder="course">
+                    <label for="course">课程<code>*</code></label>
+                    <input type="text" class="form-control" id="course" placeholder="课程" ng-model="data.course">
                 </div>
                 <div class="form-group">
-                    <label for="klasses">授课班级</label>
-                    <input type="text" class="form-control" id="klasses" placeholder="授课班级">
+                    <label for="klasses">授课班级<code>*</code></label>
+                    <input type="text" class="form-control" id="klasses" placeholder="班级1 班级2" ng-model="data.klasses">
+                </div>
+                <div class="form-group">
+                    <label for="time">授课时间<code>*</code></label>
+                    <textarea
+                            ng-model="data.time"
+                            name="time"
+                            id="time"
+                            class="form-control"
+                            rows="3"
+                            placeholder="具体周次、节次"></textarea>
                 </div>
                 <div ng-show="showByState('unSubmit')" class="text-center">
-                    <button  type="submit" class="btn btn-primary">提交</button>
+                    <button type="submit" class="btn btn-primary">提交</button>
                 </div>
-                <div ng-show="showByState('submitting')" class="alert alert-info text-center" role="alert" ng-show="submitState ===">
+                <div ng-show="showByState('submitting')" class="alert alert-info text-center" role="alert"
+                     ng-show="submitState ===">
                     正在提交，请稍后
                 </div>
-                <div ng-show="showByState('submitted')" class="alert alert-info text-center" role="alert" ng-show="submitState ===">
-                    提交成功！<br />
-                    <button type="button" class="btn btn-primary" ng-click="initData()">继续提交</button>&nbsp;&nbsp;<a ui-sref="main" class="btn btn-info">返回</a>
+                <div ng-show="showByState('submitted')" class="alert alert-info text-center" role="alert"
+                     ng-show="submitState ===">
+                    提交成功！<br/>
+                    <button type="button" class="btn btn-primary" ng-click="initData()">继续提交</button>&nbsp;&nbsp;<a
+                        ui-sref="main" class="btn btn-info">返回</a>
                 </div>
             </form>
         </div>
