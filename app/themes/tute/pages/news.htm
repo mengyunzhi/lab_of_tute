@@ -33,18 +33,18 @@ postPage = "news/detail"
             <div class="text-center">
                 <ul class="pagination">
                     {% if posts.currentPage > 1 %}
-                    <li><a href="{{ this.page.baseFileName|page({ (blogPosts.pageParam): (posts.currentPage-1) }) }}">&larr;
+                    <li><a href="?page={{ posts.currentPage-1 }}">&larr;
                         上一页</a></li>
                     {% endif %}
 
                     {% for page in 1..posts.lastPage %}
                     <li class="{{ posts.currentPage == page ? 'active' : null }}">
-                        <a href="{{ this.page.baseFileName|page({ (blogPosts.pageParam): page }) }}">{{ page }}</a>
+                        <a href="?page={{ page }}">{{ page }}</a>
                     </li>
                     {% endfor %}
 
                     {% if posts.lastPage > posts.currentPage %}
-                    <li><a href="{{ this.page.baseFileName|page({ (blogPosts.pageParam): (posts.currentPage+1) }) }}">下一页
+                    <li><a href="?page={{ posts.currentPage+1 }}">下一页
                         &rarr;</a></li>
                     {% endif %}
                 </ul>
