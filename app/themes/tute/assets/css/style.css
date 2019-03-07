@@ -222,3 +222,12 @@ content.soft p {
     padding-bottom:10px;
     border-bottom: 4px double #cd5c5c;
 }
+
+.rules h4{
+    text-align: left;
+}
+
+.rules ol li {
+    list-style-type: decimal;
+    border: none;
+}

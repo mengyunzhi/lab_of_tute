@@ -5,12 +5,12 @@
             <li><a href="/about_us" class="{% if this.page.id == 'about_us' %}active{% endif %}">中心概况</a></li>
             <li><a href="/news" class="{% if (strpos(this.page.id, 'news') is not same as(false)) %}active{% endif %}">新闻动态</a></li>
             <li><a href="/" class="{% if this.page.id == 'teaching' %}active{% endif %}">实验教学</a></li>
-            <li><a href="/" class="{% if this.page.id == 'rules' %}active{% endif %}">规章制度</a></li>
-            <li><a href="/" class="{% if this.page.id == 'equipment_and_environment' %}active{% endif %}">教学视频</a></li>
+            <li><a href="/rules" class="{% if (strpos(this.page.id, 'rules') is not same as(false)) %}active{% endif %}">规章制度</a></li>
+            <li><a href="/video" class="{% if this.page.id == 'video' %}active{% endif %}">教学视频</a></li>
             <li><a href="/soft" class="{% if this.page.id == 'soft' %}active{% endif %}">实验软件</a></li>
             <li><a href="/schedule" class="{% if (strpos(this.page.id, 'schedule') is not same as(false)) %}active{% endif %}">课表管理</a></li>
             <li><a href="/appointment" class="{% if (strpos(this.page.id, 'appointment') is not same as(false)) %}active{% endif %}">实验预约</a></li>
-            <li><a href="/" class="{% if this.page.id == 'acceptance' %}active{% endif %}">验收专栏</a></li>
+            <li><a href="/acceptance" class="{% if this.page.id == 'acceptance' %}active{% endif %}">验收资料</a></li>
             <li><a href="/resource" class="{% if (strpos(this.page.id, 'resource') is not same as(false)) %}active{% endif %}">教学资源</a>
             <li><a target="_blank" href="http://jgxy.tute.edu.cn/">学院首页</a></li>
             <div class="clear"></div>
