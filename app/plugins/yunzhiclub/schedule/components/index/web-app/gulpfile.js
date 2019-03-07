@@ -8,7 +8,7 @@ const jsFiles = ['app/*.js', 'app/**/*.js'];
 const  htmlFiles = ['app/view/*.html', 'app/view/**/*.html'];
 const watcherJs = watch(jsFiles);
 const watcherHtml = watch(htmlFiles);
-const jsDist = './../../../../assets/js';
+const jsDist = './../../../assets/js';
 const htmlDist = './../../../../../../themes/yunzhiclub/assets';
 
 function clean(cb) {
