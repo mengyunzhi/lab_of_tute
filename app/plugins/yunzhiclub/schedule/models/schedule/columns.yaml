@@ -1,0 +1,16 @@
+columns:
+    name:
+        label: 姓名
+        type: text
+    lab:
+        label: 实验室
+        type: text
+    course:
+        label: 课程
+        type: text
+    klasses:
+        label: 班级
+        type: text
+    time:
+        label: 授课时间
+        type: text

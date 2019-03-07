@@ -1,2 +1,8 @@
 1.0.1:
-    - Initialize plugin.
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table yunzhiclub_schedule_'
+    - builder_table_create_yunzhiclub_schedule_.php
+1.0.3:
+    - 'Updated table yunzhiclub_schedule_'
+    - builder_table_update_yunzhiclub_schedule_.php

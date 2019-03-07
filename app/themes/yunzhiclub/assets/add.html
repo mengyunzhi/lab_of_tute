@@ -13,15 +13,15 @@
             <div class="alert alert-success" role="alert">
                 按照大家提交需求的先后顺序，在排课时尽量满足大家对上课时间和地点的要求，但是在实训周由于课时量大，实验室资源紧张没有办法完全满足大家的要求，所以将对部分老师的要求进行微调，还请大家能够理解。
             </div>
-            <pre>{{data | json}}</pre>
             <form ng-submit="submit()">
                 <div class="form-group">
                     <label for="name">姓名<code>*</code></label>
-                    <input type="text" class="form-control" id="name" placeholder="姓名" ng-model="data.name">
+                    <input type="text" class="form-control" id="name" placeholder="姓名" ng-model="data.name" required>
                 </div>
                 <div class="form-group">
                     <label for="lab">实验室<code>*</code></label>
-                    <select class="form-control" name="lab" id="lab" ng-model="data.lab">
+                    <select class="form-control" name="lab" id="lab" ng-model="data.lab" required>
+                        <option value="">请选择</option>
                         <option>701 证券投资实验室</option>
                         <option>702 信用管理实验室</option>
                         <option>801 财会实验室</option>
@@ -36,11 +36,11 @@
                 </div>
                 <div class="form-group">
                     <label for="course">课程<code>*</code></label>
-                    <input type="text" class="form-control" id="course" placeholder="课程" ng-model="data.course">
+                    <input type="text" class="form-control" id="course" placeholder="课程" ng-model="data.course" required>
                 </div>
                 <div class="form-group">
                     <label for="klasses">授课班级<code>*</code></label>
-                    <input type="text" class="form-control" id="klasses" placeholder="班级1 班级2" ng-model="data.klasses">
+                    <input type="text" class="form-control" id="klasses" placeholder="班级1 班级2" ng-model="data.klasses" required>
                 </div>
                 <div class="form-group">
                     <label for="time">授课时间<code>*</code></label>
@@ -50,7 +50,8 @@
                             id="time"
                             class="form-control"
                             rows="3"
-                            placeholder="具体周次、节次"></textarea>
+                            placeholder="具体周次、节次"
+                            required></textarea>
                 </div>
                 <div ng-show="showByState('unSubmit')" class="text-center">
                     <button type="submit" class="btn btn-primary">提交</button>

@@ -4,3 +4,8 @@ plugin:
     author: yunzhiclub
     icon: oc-icon-adjust
     homepage: ''
+navigation:
+    main-menu-item:
+        label: 课表管理
+        url: yunzhiclub/schedule/schedule
+        icon: icon-bars

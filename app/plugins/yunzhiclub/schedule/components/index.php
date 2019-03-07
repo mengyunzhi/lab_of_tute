@@ -1,6 +1,8 @@
 <?php namespace Yunzhiclub\Schedule\Components;
 
 use Cms\Classes\ComponentBase;
+use Illuminate\Support\Facades\Input;
+use yunzhiclub\Schedule\Models\Schedule;
 
 class Index extends ComponentBase
 {
@@ -23,8 +25,13 @@ class Index extends ComponentBase
     }
 
     public function onSaveSubmit() {
-        return [
-            'test' => 'hello'
-        ];
+        $schedule = new Schedule();
+        $schedule->name = Input::get("name");
+        $schedule->time = Input::get("time");
+        $schedule->course = Input::get("course");
+        $schedule->klasses = Input::get("klasses");
+        $schedule->lab = Input::get("lab");
+        $schedule->save();
+        return [];
     }
 }
