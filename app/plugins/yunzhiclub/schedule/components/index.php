@@ -18,7 +18,13 @@ class Index extends ComponentBase
 
     public function onRun() {
         $this->addJs([
-            'assets/javascript/dist/index.min.js'
+            'assets/js/index.min.js'
         ]);
+    }
+
+    public function onSaveSubmit() {
+        return [
+            'test' => 'hello'
+        ];
     }
 }
