@@ -8,7 +8,8 @@ const jsFiles = ['app/*.js', 'app/**/*.js'];
 const  htmlFiles = ['app/view/*.html', 'app/view/**/*.html'];
 const watcherJs = watch(jsFiles);
 const watcherHtml = watch(htmlFiles);
-const dist = './../../../../assets/js';
+const jsDist = './../../../../assets/js';
+const htmlDist = './../../../../../../themes/yunzhiclub/assets';
 
 function clean(cb) {
     console.log('删除临时文件');
@@ -24,14 +25,14 @@ function build(cb) {
         .pipe(babel())
         // .pipe(gulpif(isJavaScript, uglify()))
         .pipe(concat('index.min.js'))
-        .pipe(dest(dist));
+        .pipe(dest(jsDist));
     cb();
 }
 
 function buildHtml(cb) {
     console.log('正在构建HTML');
     src(htmlFiles)
-        .pipe(dest('./../../../../../themes/yunzhiclub/assets'));
+        .pipe(dest(htmlDist));
     cb();
 }
 
