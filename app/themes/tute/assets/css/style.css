@@ -241,3 +241,7 @@ content.soft p {
     padding-bottom:5px;
     border-bottom: 1px solid #3eb39c;
 }
+
+img.img-center {
+    margin: 0 auto;
+}
