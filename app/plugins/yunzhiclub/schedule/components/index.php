@@ -22,6 +22,7 @@ class Index extends ComponentBase
         $this->addJs([
             'assets/js/index.min.js'
         ]);
+        $this->addCss('assets/css/style.css');
     }
 
     public function onSaveSubmit() {
